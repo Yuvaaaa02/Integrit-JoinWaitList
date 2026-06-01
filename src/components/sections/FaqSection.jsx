@@ -1,49 +1,84 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
-
 const faqs = [
   {
-    question: 'When will CaptionIntegrit officially launch?',
+    question: 'What is Caption Integrit?',
     answer:
-      'We are targeting a public launch in Q4 2025. Waitlist members will receive early access 4–6 weeks before the public release, along with exclusive launch pricing locked in forever.',
+      'Caption Integrit is an Adobe CEP plugin for Premiere Pro and After Effects that automatically transcribes, converts, and imports captions directly into your timeline — without leaving your editing software.',
   },
   {
-    question: 'Which Adobe applications does  Caption Integrit support?',
+    question: 'Which languages does it support?',
     answer:
-      'Integrit natively integrates with Adobe Premiere Pro (v22+) and Adobe After Effects (v22+). Both Windows and macOS are fully supported. Resolve and FCPX integrations are on the roadmap.',
+      'It supports all major Indian regional languages including Telugu, Hindi, Tamil, Kannada, Malayalam, Bengali, Marathi, Gujarati, Punjabi and more — with English phonetic conversion for all of them.',
   },
   {
-    question: 'How accurate is the AI caption generation?',
+    question: 'Do I need an internet connection?',
     answer:
-      'Our models achieve 96–99% word error rate accuracy on clean audio in English and 120+ supported languages. The plugin includes an in-timeline correction interface for the rare edge cases.',
+      'Yes, Caption Integrit uses AI APIs for transcription and conversion. A stable internet connection is required during caption generation.',
   },
   {
-    question: 'Does Caption Integrit require an internet connection?',
+    question: 'Is it really a one-time purchase?',
     answer:
-      'AI transcription requires a brief cloud connection for processing. Styling, editing, and export functionality works fully offline. Enterprise plans include local model options.',
+      'Yes. Pay once, own it forever. No monthly fees, no subscriptions. Updates are included and ship every 2 months.',
   },
   {
-    question: 'What languages are supported?',
+    question: 'What if the captions are wrong?',
     answer:
-      'Caption Integrit currently supports 120+ languages including English, Spanish, French, German, Portuguese, Mandarin, Hindi, Arabic, Japanese, Korean, and many more. Full language list is available on our documentation page.',
+      'Caption Integrit has a built-in caption editor. You can review, fix, merge, split, or delete any caption line before it ever touches your timeline.',
   },
   {
-    question: 'How is pricing structured?',
+    question: 'Which Adobe apps does it work with?',
     answer:
-      '   Caption Integrit will offer a monthly subscription with plans for solo editors, teams, and studios. Waitlist members will receive a permanent 40% discount on launch pricing. Final pricing will be announced closer to launch.',
+      'Caption Integrit works inside Adobe Premiere Pro and After Effects as a native panel plugin.',
   },
   {
-    question: 'Can I export captions in different formats?',
+    question: 'Can it handle speakers who mix languages?',
     answer:
-      'Yes.  Caption Integrit supports export to SRT, VTT, TTML, and embedded burn-in. You can also export caption data as XML for further processing in third-party tools.',
+      'Absolutely. If your speaker switches between Telugu and English mid-sentence, Caption Integrit keeps English words as-is and only converts the regional language words phonetically.',
   },
   {
-    question: 'Is my data secure?',
+    question: 'How many devices can I use it on?',
     answer:
-      'All audio data sent for processing is encrypted in transit and immediately deleted after transcription completes. We do not store, train on, or share your content. SOC 2 compliance is in progress.',
+      'Your license is tied to one device. Need to transfer to a new machine? Contact our support and we’ll sort it out.',
+  },
+  {
+    question: 'Why pay every month for something you should own?',
+    answer:
+      'Caption Integrit is a single purchase. Yours forever. No subscriptions. No renewals. No surprises.',
+  },
+  {
+    question: 'And it only gets better.',
+    answer:
+      'Fresh updates every 2 months — new features, new languages, better accuracy. All included.',
+  },
+  {
+    question: 'Ever wished your regional captions just… worked?',
+    answer:
+      'Telugu, Hindi, Tamil, Kannada — Caption Integrit reads them all and writes them the way they sound in English.',
+  },
+  {
+    question: 'Your speaker just switched languages mid-sentence. Now what?',
+    answer:
+      'Caption Integrit figures it out automatically. No manual fixes. No wrong phonetics. Just clean captions.',
+  },
+  {
+    question: 'What if you could fix every caption before it touched your timeline?',
+    answer:
+      'Review. Edit. Perfect. Then import. All without leaving your Adobe panel.',
+  },
+  {
+    question: 'What if captioning a full video took less time than making a coffee?',
+    answer:
+      'One click. Entire video. Every word. Done.',
+  },
+  {
+    question: 'Still jumping between apps just to add captions?',
+    answer:
+      'Caption Integrit lives inside Premiere Pro and After Effects. Your workflow stays yours.',
   },
 ]
+
 
 function FaqItem({ question, answer, isOpen, onToggle, index }) {
   return (
@@ -69,8 +104,8 @@ function FaqItem({ question, answer, isOpen, onToggle, index }) {
         </span>
         <div
           className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ml-4 transition-all duration-300 ${isOpen
-              ? 'bg-accent/15 border border-accent/30'
-              : 'glass border border-white/10 group-hover:border-accent/20'
+            ? 'bg-accent/15 border border-accent/30'
+            : 'glass border border-white/10 group-hover:border-accent/20'
             }`}
         >
           {isOpen ? (

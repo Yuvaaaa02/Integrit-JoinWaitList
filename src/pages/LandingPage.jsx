@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import HeroSection from '../components/sections/HeroSection'
@@ -8,18 +9,23 @@ import FaqSection from '../components/sections/FaqSection'
 import WaitlistForm from '../components/sections/WaitlistForm'
 
 export default function LandingPage() {
+  const [waitlistOpen, setWaitlistOpen] = useState(false)
+
+  const openWaitlist = () => setWaitlistOpen(true)
+  const closeWaitlist = () => setWaitlistOpen(false)
+
   return (
     <div className="min-h-screen bg-bg-primary">
-      <Navbar />
+      <Navbar onJoinWaitlist={openWaitlist} />
       <main>
-        <HeroSection />
+        <HeroSection onJoinWaitlist={openWaitlist} />
         <FeaturesSection />
         <DemoSection />
         <StatsSection />
         <FaqSection />
-        <WaitlistForm />
       </main>
       <Footer />
+      <WaitlistForm isOpen={waitlistOpen} onClose={closeWaitlist} />
     </div>
   )
 }

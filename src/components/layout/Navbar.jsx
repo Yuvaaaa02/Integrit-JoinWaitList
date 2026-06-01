@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onJoinWaitlist }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -48,7 +48,7 @@ export default function Navbar() {
               className="h-7 w-7 object-contain transition-all duration-300
                          group-hover:drop-shadow-[0_0_10px_rgba(195,255,51,0.7)]"
             />
-            <span className="font-display text-[1.4rem] leading-none text-white tracking-[0.12em]
+            <span className="font-display font-bold text-[1.4rem] leading-none text-white tracking-[0.08em]
                              group-hover:text-accent transition-colors duration-300">
               INTEGRIT
             </span>
@@ -71,7 +71,7 @@ export default function Navbar() {
           {/* ── CTA ── */}
           <div className="hidden md:flex items-center">
             <button
-              onClick={() => handleNav('#waitlist')}
+              onClick={() => { setMenuOpen(false); onJoinWaitlist?.() }}
               className="btn-primary px-5 py-2 rounded-lg text-sm"
             >
               Join Waitlist
@@ -112,7 +112,7 @@ export default function Navbar() {
               </button>
             ))}
             <button
-              onClick={() => handleNav('#waitlist')}
+              onClick={() => { setMenuOpen(false); onJoinWaitlist?.() }}
               className="btn-primary w-full py-3 rounded-lg text-sm mt-3"
             >
               Join Waitlist

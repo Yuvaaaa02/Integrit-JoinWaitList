@@ -11,9 +11,9 @@ const fadeUp = {
   }),
 }
 
-export default function HeroSection() {
+export default function HeroSection({ onJoinWaitlist }) {
   const scrollToWaitlist = () => {
-    document.querySelector('#waitlist')?.scrollIntoView({ behavior: 'smooth' })
+    if (onJoinWaitlist) onJoinWaitlist()
   }
   const scrollToDemo = () => {
     document.querySelector('#demo')?.scrollIntoView({ behavior: 'smooth' })
@@ -78,11 +78,11 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="font-display leading-none mb-6"
-          style={{ fontSize: 'clamp(4rem, 12vw, 10rem)' }}
+          className="leading-none mb-6 font-bold"
+          style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 'clamp(2.75rem, 6vw, 72px)', fontWeight: 800 }}
         >
-          <span className="block text-white">JOIN THE</span>
-          <span className="block gradient-text text-glow">WAITLIST</span>
+          <span className="block text-white">Caption </span>
+          <span className="block gradient-text text-glow">Integrit</span>
         </motion.h1>
 
         {/* Subheadline */}

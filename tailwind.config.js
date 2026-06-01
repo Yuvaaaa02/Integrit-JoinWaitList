@@ -16,7 +16,7 @@ export default {
         'border-subtle': 'rgba(255,255,255,0.08)',
       },
       fontFamily: {
-        'display': ['"Bebas Neue"', 'sans-serif'],
+        'display': ['Syne', 'system-ui', 'sans-serif'],
         'body': ['"DM Sans"', 'sans-serif'],
         'mono': ['"JetBrains Mono"', 'monospace'],
       },

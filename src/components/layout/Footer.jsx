@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Integrit logo"
                 className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(195,255,51,0.5)]"
               />
-              <span className="font-display text-2xl text-white tracking-wider">INTEGRIT</span>
+              <span className="font-display font-bold text-2xl text-white tracking-wider">INTEGRIT</span>
             </div>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
               AI-powered multilingual caption generation plugin for Adobe Premiere Pro & After Effects. Build faster. Reach further.

@@ -14,7 +14,6 @@ export const submitToGoogleSheets = async (formData) => {
     body: JSON.stringify({
       name: formData.name,
       email: formData.email,
-      mobile: formData.mobile,
       joinedAt: new Date().toISOString(),
     }),
   })

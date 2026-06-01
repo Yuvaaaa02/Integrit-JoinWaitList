@@ -57,7 +57,6 @@ export default function DemoSection() {
             muted
             loop
             playsInline
-            controls
           >
             <source src="/videos/demo.mp4" type="video/mp4" />
           </video>
